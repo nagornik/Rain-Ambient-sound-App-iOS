@@ -11,7 +11,8 @@ import SwiftUI
 struct RainApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ButtonsView()
+                .environmentObject(AudioManager())
         }
     }
 }
