@@ -7,14 +7,28 @@
 
 import Foundation
 import AVKit
+import MediaPlayer
+
+enum Sounds: String, CaseIterable {
+    case rain = "rain"
+    case subway = "subway"
+}
 
 final class AudioManager: ObservableObject {
     
-    var player: AVAudioPlayer?
+    var audios = ["rain", "subway"]
     
+    @Published var playingButton: Sounds?
+    
+    var player: AVAudioPlayer = AVAudioPlayer()
     @Published private(set) var isPlaying = false
-//    @Published var volume: CGFloat = 0.5
     
+    @Published var soundLevel: Float = 0 {
+        didSet{
+            MPVolumeView.setVolume(soundLevel)
+        }
+    }
+
     func startPlayer(track: String) {
         
         guard let url = Bundle.main.url(forResource: track, withExtension: "wav") else { return }
@@ -24,8 +38,9 @@ final class AudioManager: ObservableObject {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
             try AVAudioSession.sharedInstance().setActive(true)
             player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-            player?.numberOfLoops = -1
+            player.play()
+            soundLevel = AVAudioSession.sharedInstance().outputVolume
+            player.numberOfLoops = -1
         } catch {
             print(error.localizedDescription)
         }
@@ -44,9 +59,9 @@ final class AudioManager: ObservableObject {
 //    }
     
     func stop() {
-        guard let player = player else {
-            return
-        }
+//        guard let player = player else {
+//            return
+//        }
 
         if player.isPlaying {
             player.stop()

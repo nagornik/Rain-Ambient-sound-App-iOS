@@ -9,23 +9,27 @@ import SwiftUI
 
 struct ButtonElement: View {
     
-    var imageName: String
+    @EnvironmentObject var player: AudioManager
     
     @GestureState var tap = false
-    @State var press = false
+    
+    var buttonCase: Sounds
+    var press: Bool {
+        player.playingButton == buttonCase ? true : false
+    }
     
     var actionStart: () -> Void
     var actionStop: () -> Void
     
     var body: some View {
         ZStack {
-            Image(imageName)
+            Image(buttonCase.rawValue)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
                 .brightness(press ? 0.3 : 0.7)
             
-            Image(imageName)
+            Image(buttonCase.rawValue)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
@@ -81,11 +85,12 @@ struct ButtonElement: View {
                     impact(type: .rigid)
                 })
                 .onEnded({ value in
-                    press.toggle()
                     haptic(type: .success)
-                    if press == true {
+                    if player.playingButton != buttonCase {
+                        player.playingButton = buttonCase
                         actionStart()
                     } else {
+                        player.playingButton = nil
                         actionStop()
                     }
                 })
@@ -100,7 +105,8 @@ struct ButtonElement: View {
 
 struct Button_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonElement(imageName: "rain", actionStart: {}, actionStop: {})
+        ButtonElement(buttonCase: .rain, actionStart: {}, actionStop: {})
+            .environmentObject(AudioManager())
             .previewDevice("iPhone 13")
     }
 }

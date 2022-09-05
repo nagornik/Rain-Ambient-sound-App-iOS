@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import MediaPlayer
 
 func haptic(type: UINotificationFeedbackGenerator.FeedbackType) {
     UINotificationFeedbackGenerator()
@@ -42,5 +43,16 @@ extension Color {
             blue:  Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+}
+
+extension MPVolumeView {
+    static func setVolume(_ volume: Float) {
+        let volumeView = MPVolumeView()
+        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            slider?.value = volume
+        }
     }
 }

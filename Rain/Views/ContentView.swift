@@ -10,37 +10,37 @@ import SwiftUI
 struct ButtonsView: View {
     
     @EnvironmentObject var player: AudioManager
-    @State private var soundLevel: Float = 0.5
     
     var body: some View {
         
         ZStack {
             
-            ButtonElement(imageName: "rain") {
-                player.startPlayer(track: "rain")
-            } actionStop: {
-                player.stop()
-            }
+            Color(hex: "CED4DA")
+                .ignoresSafeArea()
+            
+            VStack(spacing: 30.0) {
+            
+                ForEach(Sounds.allCases, id:\.self) { soundCase in
+                    ButtonElement(buttonCase: soundCase) {
+                        player.startPlayer(track: soundCase.rawValue)
+                    } actionStop: {
+                        player.stop()
+                    }
+                }
 
+            }
+            
             if player.isPlaying {
             
                 VStack {
                     
                     Spacer()
                     
-                    Text("Volume")
-//                        .foregroundColor(Color(hex: "#B2B2B3"))
-                    
                     HStack {
                         Image(systemName: "speaker.wave.1")
                         
-                        Slider(
-                            value: $soundLevel, in: 0...1,
-                            onEditingChanged: { data in
-                                player.player?.volume = soundLevel
-                            })
-                        
-                        
+//                        Slider(value: $player.player.volume, in: 0...1)
+                        Slider(value: $player.soundLevel, in: 0...1)
                         
                         Image(systemName: "speaker.wave.3")
                     }
@@ -55,8 +55,8 @@ struct ButtonsView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: "CED4DA"))
         .animation(.spring().speed(0.3), value: player.isPlaying)
+        
         
         
     }
