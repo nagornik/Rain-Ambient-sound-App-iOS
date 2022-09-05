@@ -16,6 +16,7 @@
 		4BE8012528C626B500AD65FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8012428C626B500AD65FB /* Extensions.swift */; };
 		4BE8012728C62D2400AD65FB /* rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4BE8012628C62D2400AD65FB /* rain.wav */; };
 		4BE8012928C62D8300AD65FB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8012828C62D8300AD65FB /* AudioManager.swift */; };
+		4BF72EDB28C6609800F9DBF5 /* restaurant.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4BF72EDA28C6609800F9DBF5 /* restaurant.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4BE8012628C62D2400AD65FB /* rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain.wav; sourceTree = "<group>"; };
 		4BE8012828C62D8300AD65FB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		4BE8012A28C6302300AD65FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4BF72EDA28C6609800F9DBF5 /* restaurant.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = restaurant.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				4BE8012628C62D2400AD65FB /* rain.wav */,
+				4BF72EDA28C6609800F9DBF5 /* restaurant.wav */,
 				4B42991D28C647E50057B93B /* subway.wav */,
 			);
 			path = Audios;
@@ -182,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BF72EDB28C6609800F9DBF5 /* restaurant.wav in Resources */,
 				4BE8012728C62D2400AD65FB /* rain.wav in Resources */,
 				4B42991E28C647E50057B93B /* subway.wav in Resources */,
 				4BE8011C28C6249B00AD65FB /* Preview Assets.xcassets in Resources */,
@@ -337,7 +341,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,7 +371,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

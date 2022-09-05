@@ -12,11 +12,10 @@ import MediaPlayer
 enum Sounds: String, CaseIterable {
     case rain = "rain"
     case subway = "subway"
+    case restaurant = "restaurant"
 }
 
 final class AudioManager: ObservableObject {
-    
-    var audios = ["rain", "subway"]
     
     @Published var playingButton: Sounds?
     
