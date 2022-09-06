@@ -119,7 +119,7 @@ struct ButtonsView: View {
                                     .opacity(0.7)
                             )
                             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                            .shadow(color: Color(hex: "#2F22F3"), radius: 5, x: 0, y: 5)
+                            .shadow(color: Color(hex: "#2F22F3"), radius: 10, x: 0, y: 5)
                     }
                     
                     Button {
@@ -135,7 +135,7 @@ struct ButtonsView: View {
                                     .opacity(0.7)
                             )
                             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                            .shadow(color: Color(hex: "#EF1689"), radius: 5, x: 0, y: 5)
+                            .shadow(color: Color(hex: "#EF1689"), radius: 10, x: 0, y: 5)
                     }
                     
                 }

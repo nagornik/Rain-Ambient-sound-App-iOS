@@ -15,13 +15,12 @@ enum Sounds: String, CaseIterable {
     case restaurant = "restaurant"
 }
 
-final class AudioManager: ObservableObject {
-    
-    @Published var playingButton: Sounds?
+class AudioManager: ObservableObject {
     
     var player: AVAudioPlayer = AVAudioPlayer()
-    @Published private(set) var isPlaying = false
     
+    @Published var playingButton: Sounds?
+    @Published var isPlaying = false
     @Published var soundLevel: Float = 0 {
         didSet{
             MPVolumeView.setVolume(soundLevel)
@@ -46,33 +45,11 @@ final class AudioManager: ObservableObject {
         
     }
     
-//    func playPause() {
-//        guard let player = player else { return }
-//        if player.isPlaying {
-//            player.pause()
-//            isPlaying = false
-//        } else {
-//            player.play()
-//            isPlaying = true
-//        }
-//    }
-    
     func stop() {
-//        guard let player = player else {
-//            return
-//        }
-
         if player.isPlaying {
             player.stop()
             isPlaying = false
         }
     }
-    
-//    func toggleLoop() {
-//        guard let player = player else {
-//            return
-//        }
-//        player.numberOfLoops = player.numberOfLoops == 0 ? -1 : 0
-//    }
     
 }
