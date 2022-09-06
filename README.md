@@ -6,7 +6,7 @@ This app has three pre-installed ambient background noises. On long-pressing a b
 - Custom extensions
 - MediaPlayer / MPVolumeView access to control device volume
 - AVAudioPlayer to play sounds
-- Sound playing in background
+- Sound playing in background / locked device
 - Nice design
 - Long press gestures
 – Animations
