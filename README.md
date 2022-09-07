@@ -1,5 +1,11 @@
 # Rain-Ambient-sound-iOS-App - made in SwiftUI
 
+Do you use Ambient Noise apps? Do you sometimes listen to white noise or anything else?
+
+I wanted to make an app with nice design and simple functionality. With the help of this app, you can listen to calming or focusing noises. Very simple, it just works. Of course, it works on a locked device too.
+
+In the future I will add more sounds, categories and favorites.
+
 This app has three pre-installed ambient background noises. On long-pressing a button it provides a nice haptic feedback and animation, starts playing a sound and shows a slider to control volume.
 
 ## Features:
