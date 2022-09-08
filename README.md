@@ -15,7 +15,7 @@ This app has three pre-installed ambient background noises. On long-pressing a b
 - Sound playing in background / locked device
 - Nice design
 - Long press gestures
-– Animations
+- Animations
 - Haptic feedback
 
 ## iPhone 13
